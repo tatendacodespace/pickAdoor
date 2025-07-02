@@ -1,0 +1,111 @@
+body {
+  background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+  min-height: 100vh;
+  margin: 0;
+  font-family: 'Poppins', Arial, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  background: rgba(255,255,255,0.9);
+  border-radius: 24px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+  padding: 2rem 2.5rem 3rem 2.5rem;
+  text-align: center;
+  max-width: 420px;
+}
+
+h1 {
+  font-size: 2.2rem;
+  margin-bottom: 1.5rem;
+  color: #ff6f61;
+  letter-spacing: 1px;
+  font-weight: 700;
+}
+
+.doors {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.door {
+  width: 70px;
+  height: 120px;
+  perspective: 800px;
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.2s;
+}
+
+.door-front, .door-back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0; left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  border-radius: 12px;
+  background: #fff3e6;
+  box-shadow: 0 4px 16px rgba(255,111,97,0.12);
+  backface-visibility: hidden;
+  transition: box-shadow 0.2s;
+}
+
+.door-front {
+  z-index: 2;
+}
+
+.door-back {
+  z-index: 1;
+  background: #ffe0b2;
+  color: #ff6f61;
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 0.5rem;
+  text-align: center;
+  transform: rotateY(180deg);
+}
+
+.door:hover {
+  transform: scale(1.08) rotateZ(-2deg);
+}
+
+.door.open .door-front {
+  transform: rotateY(-180deg);
+}
+.door.open .door-back {
+  transform: rotateY(0deg);
+}
+
+.reveal {
+  min-height: 48px;
+  font-size: 1.3rem;
+  color: #ff6f61;
+  font-weight: 600;
+  margin-top: 1.2rem;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+.reveal.show {
+  opacity: 1;
+  animation: popIn 0.7s cubic-bezier(.68,-0.55,.27,1.55);
+}
+
+@keyframes popIn {
+  0% { transform: scale(0.7); opacity: 0; }
+  70% { transform: scale(1.15); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@media (max-width: 600px) {
+  .container { padding: 1rem; }
+  .doors { gap: 0.5rem; }
+  .door { width: 54px; height: 90px; }
+  h1 { font-size: 1.3rem; }
+}
