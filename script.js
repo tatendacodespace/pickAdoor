@@ -33,6 +33,8 @@ doors.forEach(door => {
   door.addEventListener('click', () => {
     if (isRevealing || door.classList.contains('open')) return;
     isRevealing = true;
+    // Close any open doors before opening the new one
+    doors.forEach(d => d.classList.remove('open'));
     openSound.currentTime = 0;
     openSound.play();
     door.classList.add('open');

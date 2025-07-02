@@ -83,6 +83,19 @@ h1 {
   transform: rotateY(0deg);
 }
 
+/* When a door is open, expand it and shrink others */
+.door.open {
+  width: 180px;
+  z-index: 10;
+  transition: width 0.4s cubic-bezier(.68,-0.55,.27,1.55), transform 0.2s;
+}
+
+.door:not(.open) {
+  width: 50px;
+  opacity: 0.7;
+  transition: width 0.4s, opacity 0.2s;
+}
+
 .reveal {
   min-height: 48px;
   font-size: 1.3rem;
@@ -103,9 +116,12 @@ h1 {
   100% { transform: scale(1); opacity: 1; }
 }
 
+/* Responsive for mobile */
 @media (max-width: 600px) {
   .container { padding: 1rem; }
   .doors { gap: 0.5rem; }
   .door { width: 54px; height: 90px; }
   h1 { font-size: 1.3rem; }
+  .door.open { width: 110px; }
+  .door:not(.open) { width: 32px; }
 }
