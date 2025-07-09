@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pick a Door, Reveal a Vibe</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Pick a Door, Reveal a Vibe</h1>
+    <div class="doors">
+      <div class="door" data-index="0">
+        <div class="door-front">🚪</div>
+        <div class="door-back"></div>
+      </div>
+      <div class="door" data-index="1">
+        <div class="door-front">🚪</div>
+        <div class="door-back"></div>
+      </div>
+      <div class="door" data-index="2">
+        <div class="door-front">🚪</div>
+        <div class="door-back"></div>
+      </div>
+      <div class="door" data-index="3">
+        <div class="door-front">🚪</div>
+        <div class="door-back"></div>
+      </div>
+    </div>
+    <div class="reveal" id="reveal"></div>
+    <button class="back-btn" onclick="window.location.href='welcome.html'">Back to Welcome</button>
+  </div>
+  <audio id="hoverSound" src="hover.mp3" preload="auto"></audio>
+  <audio id="openSound" src="open.mp3" preload="auto"></audio>
+  <script src="script.js"></script>
+</body>
+</html>
