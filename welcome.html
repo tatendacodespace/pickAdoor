@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Welcome | Pick a Door, Reveal a Vibe</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .welcome-container {
+      background: rgba(255,255,255,0.92);
+      border-radius: 28px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.13);
+      padding: 2.5rem 2.5rem 2.5rem 2.5rem;
+      text-align: center;
+      max-width: 440px;
+      margin: 2rem auto;
+      animation: popIn 1s cubic-bezier(.68,-0.55,.27,1.55);
+    }
+    .welcome-title {
+      font-size: 2.3rem;
+      color: #ff6f61;
+      font-weight: 800;
+      margin-bottom: 1.2rem;
+      letter-spacing: 1px;
+    }
+    .welcome-desc {
+      font-size: 1.18rem;
+      color: #ff6f61cc;
+      margin-bottom: 2.2rem;
+      font-weight: 500;
+    }
+    .welcome-btn {
+      background: linear-gradient(90deg, #ffecd2 0%, #ff6f61 100%);
+      color: #fff;
+      font-size: 1.2rem;
+      font-weight: 700;
+      border: none;
+      border-radius: 16px;
+      padding: 0.9rem 2.2rem;
+      cursor: pointer;
+      box-shadow: 0 4px 16px rgba(255,111,97,0.13);
+      transition: transform 0.18s, box-shadow 0.18s;
+    }
+    .welcome-btn:hover {
+      transform: scale(1.07);
+      box-shadow: 0 8px 32px rgba(255,111,97,0.18);
+      background: linear-gradient(90deg, #ff6f61 0%, #ffecd2 100%);
+    }
+  </style>
+</head>
+<body>
+  <div class="welcome-container">
+    <div class="welcome-title">Welcome to Pick a Door, Reveal a Vibe!</div>
+    <div class="welcome-desc">
+      Step into a world of fun, suspense, and surprise. Pick a door to reveal a random quote, personality type, or music genre—perfect for sharing your vibe on TikTok or IG Reels!
+    </div>
+    <button class="welcome-btn" onclick="window.location.href='index.html'">Start Game</button>
+  </div>
+</body>
+</html>
